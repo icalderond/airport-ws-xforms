@@ -22,7 +22,10 @@ namespace airports_country.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+            var soapService = new airports_country.Droid.Service.SoapService();
+            var serviaAir = new airports_country.Model.ServiceAeropuerto(soapService);
+
+            LoadApplication(new App(serviaAir));
         }
     }
 }
