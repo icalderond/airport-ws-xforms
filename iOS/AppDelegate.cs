@@ -14,7 +14,10 @@ namespace airports_country.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            LoadApplication(new App());
+            var soapService = new airports_country.iOS.Service.SoapService();
+            var serviaAir = new airports_country.Model.ServiceAeropuerto(soapService);
+
+            LoadApplication(new App(serviaAir));
 
             return base.FinishedLaunching(app, options);
         }

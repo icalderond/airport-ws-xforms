@@ -3,6 +3,10 @@ namespace airports_country.Model
 {
     public class Aeropuerto
     {
-        public string Nombre;
+        public string Name;
+        public string AirportCode;
+        public string Country;
+        public string RunwayElevationFeet;
+        public string UrlFlagCountry;
     }
 }

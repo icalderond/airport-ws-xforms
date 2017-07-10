@@ -3,7 +3,7 @@ using System.Linq;
 using System.Xml.Linq;
 using airports_country.Model;
 
-namespace airports_country.Droid.Service
+namespace airports_country.iOS.Service
 {
     public class SoapService : IAirportService
     {
@@ -27,7 +27,7 @@ namespace airports_country.Droid.Service
                              RunwayElevationFeet = item.Element("RunwayElevationFeet").Value,
                              UrlFlagCountry = urlflag.Replace("{FLAG_CODE}", item.Element("CountryAbbrviation").Value)
                          })
-                .ToList();
+               .ToList();
 
             return lista;
         }
