@@ -11,7 +11,7 @@ namespace airports_country.Model
         {
             airportService = _airportService;
             airportService.GetData_Completed += (s, a) =>
-                  ObtenerAeropuertoByCountry_Completed?.Invoke(this, new GenericEventArgs<Aeropuerto>(a.Result))
+                  ObtenerAeropuertoByCountry_Completed?.Invoke(this, new GenericEventArgs<Aeropuerto>(a.Result));
         }
 
         public void ObtenerAeropuertoByCountry(string _country)

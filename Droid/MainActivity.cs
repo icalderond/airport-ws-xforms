@@ -24,8 +24,8 @@ namespace airports_country.Droid
 
             var soapService = new airports_country.Droid.Service.SoapService();
             var serviaAir = new airports_country.Model.ServiceAeropuerto(soapService);
-
-            LoadApplication(new App(serviaAir));
+            App.servicio = serviaAir;
+            LoadApplication(new App());
         }
     }
 }

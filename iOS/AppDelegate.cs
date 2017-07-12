@@ -17,7 +17,8 @@ namespace airports_country.iOS
             var soapService = new airports_country.iOS.Service.SoapService();
             var serviaAir = new airports_country.Model.ServiceAeropuerto(soapService);
 
-            LoadApplication(new App(serviaAir));
+            App.servicio = serviaAir;
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }

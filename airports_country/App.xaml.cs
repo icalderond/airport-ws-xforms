@@ -5,18 +5,12 @@ namespace airports_country
 {
     public partial class App : Application
     {
-        public ServiceAeropuerto servicio;
+        public static ServiceAeropuerto servicio;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new airports_countryPage());
-        }
-        public App(ServiceAeropuerto _service)
-        {
-            InitializeComponent();
-            servicio = _service;
-            servicio.ObtenerAeropuertoByCountry("puerto rico");
+            //MainPage = new NavigationPage(new airports_countryPage());
             MainPage = new NavigationPage(new airports_countryPage());
         }
 
