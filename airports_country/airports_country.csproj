@@ -42,6 +42,7 @@
     <Compile Include="Model\IAirportService.cs" />
     <Compile Include="Model\Aeropuerto.cs" />
     <Compile Include="Model\ServiceAeropuerto.cs" />
+    <Compile Include="Model\GenericEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

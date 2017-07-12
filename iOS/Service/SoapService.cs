@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using airports_country.Model;
@@ -13,7 +14,10 @@ namespace airports_country.iOS.Service
         {
             service = new WSAeropuerto.airport();
         }
-        public List<Aeropuerto> GetDataAsync(string _country)
+
+        public event EventHandler<GenericEventArgs<Aeropuerto>> GetData_Completed;
+
+        public void GetDataAsync(string _country)
         {
             var result = service.GetAirportInformationByCountry(_country);
             XDocument doc = XDocument.Parse(result);
@@ -28,8 +32,7 @@ namespace airports_country.iOS.Service
                              UrlFlagCountry = urlflag.Replace("{FLAG_CODE}", item.Element("CountryAbbrviation").Value)
                          })
                .ToList();
-
-            return lista;
+            GetData_Completed?.Invoke(this, new GenericEventArgs<Aeropuerto>(lista));
         }
     }
 }

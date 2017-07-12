@@ -6,6 +6,7 @@ namespace airports_country.Model
 {
     public interface IAirportService
     {
-        List<Aeropuerto> GetDataAsync(string _country);
+        event EventHandler<GenericEventArgs<Aeropuerto>> GetData_Completed;
+        void GetDataAsync(string _country);
     }
 }
